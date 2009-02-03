@@ -1,0 +1,65 @@
+/************* GENERAL CSS ************/
+
+body {
+	margin: 0px;
+	padding: 0px;
+	text-align: justify;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #333333;
+
+	scrollbar-3dlight-color : #82BCDA;
+	scrollbar-darkshadow-color : #82BCDA;
+	scrollbar-highlight-color : #D7ECF5;
+	scrollbar-shadow-color : #3985AB;
+	scrollbar-arrow-color : #0E212A;
+	scrollbar-face-color : #82BCDA;
+	scrollbar-track-color : #82BCDA;
+
+}
+
+
+#container {
+
+	margin: 0px auto;
+	padding: 0px 0px 0px 0px;
+	width: 700px;
+	height: 475px;
+	background: #666666 url(../imagenes/fondo.png);
+	
+}
+
+#content {
+	height: 300px;
+	width: 600px;
+	position: relative; left:70px; top:125px;
+	overflow-y: scroll;
+	
+}
+
+#reproductor {
+	position: relative; left:370px; top:-175px;
+	overflow-y: scroll;
+	
+}
+
+
+
+td.titulo {
+	text-align: left;
+	font-size: 20px;
+	color: #B22222;
+	font-weight:normal;
+	padding: 5px 0px 0px 0px;
+}
+
+td {
+	font-size: 14px;
+	color: #228B22;
+	font-weight:bold;
+	padding: 10px 0px 0px 0px;
+}
+
+td.col1 {
+	width: 180px;
+}

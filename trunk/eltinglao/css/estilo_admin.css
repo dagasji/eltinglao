@@ -1,0 +1,56 @@
+	#container {
+		width: 800px;
+		margin: 0px auto;
+		text-align: left;
+		background-color: #fff;
+		color: #666;
+		border: 10px solid #ccc;
+	}
+
+	#header {
+		background-color: #000;
+		color: #fff;
+		padding: 2px 15px 2px 15px;
+		font-family: "Trebuchet MS", Times, serif;
+	}
+
+	#sidebar {
+		width: 200px;
+		padding: 10px;
+		float: left;
+		background-color: #eee;
+		border-right: 1px solid #ccc;
+		border-bottom: 1px solid #ccc;
+	}
+
+	#main {
+		padding: 10px;
+		margin-left: 225px;
+	}
+
+	#footer {
+		clear: both;
+		background-color: #000;
+		color: #ccc;
+		padding: 1px;
+		text-align: center;
+	}
+
+
+	body {
+		background-color: #666;
+		text-align: center;
+		margin: 0px;
+		font: 10pt Arial, Helvetica, sans-serif;
+	}
+
+	/* estilos morralla */
+
+	#header h2 {
+		font-style: italic;
+		color: #ccc;
+	}
+
+	#footer a {
+		color: #fff;
+	}
