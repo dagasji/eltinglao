@@ -44,7 +44,7 @@
     <head>
         <title>Gestor de Contenidos - El Tinglao.net</title>
         <link href="./css/estilo_admin.css" rel="stylesheet" type="text/css" />
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
 
         <script>
             function editar(id, anio){
@@ -81,11 +81,11 @@
             </div>            
             <?php include 'sidebar.html'; ?>
             <div id="main">
-                <h4>Años</h4>
+                <h4>A&ntilde;os</h4>
                 <table border="0">
                     <tr>
-                        <td style="width:60px"><b>Código</b></td>
-                        <td style="width:60px"><b>Año</b></td>                        
+                        <td style="width:60px"><b>C&oacute;digo</b></td>
+                        <td style="width:60px"><b>A&ntilde;o</b></td>
                     </tr>                    
                     <?php
                         $result = mysql_db_query("eltinglao", $SELECT);
@@ -112,7 +112,7 @@
                     <input type="hidden" name="id" />
                     <table>                        
                         <tr>
-                            <td>Año</td>
+                            <td>A&ntilde;o</td>
                             <td><input type="text" name="anio"/></td>
                         </tr>
                         <tr>
