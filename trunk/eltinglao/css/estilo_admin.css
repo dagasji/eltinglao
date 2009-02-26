@@ -1,5 +1,5 @@
 	#container {
-		width: 800px;
+		width: 850px;
 		margin: 0px auto;
 		text-align: left;
 		background-color: #fff;
@@ -23,9 +23,33 @@
 		border-bottom: 1px solid #ccc;
 	}
 
+        #sidebar a{
+	text-align: center;
+	font-size: 14px;
+	color: #000000;
+	font-weight:bold;
+	text-decoration:none;
+	}
+
+        #sidebar a:hover{
+	color:red;
+
+	}
+
 	#main {
 		padding: 10px;
 		margin-left: 225px;
+	}
+
+        #main a{
+	color: #000000;
+        font-weight:bold;
+	text-decoration:none;
+	}
+
+        #main a:hover{
+	color:red;
+
 	}
 
 	#footer {
@@ -43,6 +67,7 @@
 		margin: 0px;
 		font: 10pt Arial, Helvetica, sans-serif;
 	}
+
 
 	/* estilos morralla */
 
