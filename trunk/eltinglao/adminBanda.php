@@ -52,7 +52,7 @@
     <head>
         <title>Gestor de Contenidos - El Tinglao.net</title>
         <link href="./css/estilo_admin.css" rel="stylesheet" type="text/css" />
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
 
         <script>
             function editar(id, nombre, carpeta, tb){
@@ -103,7 +103,7 @@
                 <h4>Banda</h4>                
                 <table border="0">
                     <tr>
-                        <td style="width:60px"><b>Código</b></td>
+                        <td style="width:60px"><b>C&oacute;digo</b></td>
                         <td style="width:115px"><b>Nombre</b></td>
                         <td style="width:80px"><b>Carpeta</b></td>
                         <td style="width:120px"><b>Tipo de Banda</b></td>
