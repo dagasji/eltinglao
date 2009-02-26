@@ -10,16 +10,21 @@
                     b.id_banda 'ID_BANDA',
                     tg.descripcion 'TG',
                     tg.id_tipo 'ID_TG',
-                    tb.descripcion 'TB'
-                FROM album al,
-                    anio an,
-                    banda b,
-                    tipo_grabacion tg,
-                    tipo_banda tb
-                WHERE al.id_anio = an.id_anio
-                    AND al.id_tipo_grabacion = tg.id_tipo
-                    AND al.id_banda = b.id_banda
-                    AND tb.id_tipo = b.id_tipo";
+                    tb.descripcion 'TB',
+                    count(m.id_marcha) 'TOTAL'
+                   FROM (album al 
+                      LEFT JOIN marcha m
+                          ON al.id_album = m.id_album)
+                      JOIN anio an
+                      JOIN banda b
+                      JOIN tipo_grabacion tg
+                      JOIN tipo_banda tb
+                          ON al.id_anio = an.id_anio
+                          AND al.id_banda = b.id_banda
+                          AND al.id_tipo_grabacion = tg.id_tipo
+                          AND b.id_tipo = tb.id_tipo
+                   GROUP BY al.id_album
+                   ORDER BY b.nombre, tg.descripcion, an.anio, al.descripcion";
     
 
     $SELECT_COMBO_ANIO = "SELECT * FROM anio a";
@@ -77,7 +82,7 @@
     <head>
         <title>Gestor de Contenidos - El Tinglao.net</title>
         <link href="./css/estilo_admin.css" rel="stylesheet" type="text/css" />
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
 
         <script>
             function editar(id, descripcion, carpeta, banda, tg, anio ){
@@ -136,14 +141,15 @@
             <?php include 'sidebar.html'; ?>
             <div id="main">
                 <h4>Album</h4>
-                <table border="0" cellspacing="13" >
+                <table border="0" cellspacing="10" >
                     <tr>
                         <td><b>Cod.</b></td>
                         <td><b>Nombre</b></td>
-                        <td><b>Carpeta</b></td>
-                        <td ><b>Año</b></td>
+                        <td><b>Carpeta</b></td>                        
                         <td><b>Banda</b></td>
                         <td ><b>Tipo Grab.</b></td>
+                        <td ><b>A&ntilde;o</b></td>
+                        <td ><b>Num. marchas</b></td>
                         <td ><b>&nbsp;</b></td>
                     </tr>
                     <?php
@@ -161,14 +167,17 @@
                                 <?php echo $row["ALBUM_CARPETA"]?>
                             </td>
                             <td>
-                                <?php echo $row["ANIO"]?>
-                            </td>
-                            <td>
                                 <?php echo $row["BANDA"]?>
                             </td>
 
                             <td>
                                 <?php echo $row["TG"]?>
+                            </td>
+                            <td>
+                                <?php echo $row["ANIO"]?>
+                            </td>
+                            <td>
+                                <a href="adminMarcha.php?idalbum=<?php echo $row["ID"]?>"><?php echo $row["TOTAL"]?>&nbsp;marchas</a>
                             </td>
                             <td>
                                 <a href="#" onclick="javascript:eliminar(<?php echo $row["ID"]?> )"><img src="./imagenes/btn_eliminar.JPG" alt="Eliminar" border="0"/></a>
@@ -226,7 +235,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Año</td>
+                            <td>A&ntilde;o</td>
                             <td>
                                 <select name="anio">
                                         <option value=""></option>
