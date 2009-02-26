@@ -1,6 +1,10 @@
 <?php
 
     $BBDD = "eltinglao";
+    $id_anio = $_REQUEST['id_anio'];
+    $id_banda = $_REQUEST['id_banda'];
+    $id_tg = $_REQUEST['id_tg'];
+
     $SELECT_ALBUM = "SELECT al.id_album 'ID',
                             al.descripcion 'DESCRIPCION',
                             al.carpeta 'ALBUM_CARPETA',
@@ -17,13 +21,13 @@
                         AND al.id_tipo_grabacion = tg.id_tipo
                         AND al.id_banda = b.id_banda
                         AND tb.id_tipo = b.id_tipo
-                        AND an.anio = '2008'
-                        AND tg.descripcion = 'A pie de calle'
-                        AND b.nombre = 'Expiracion'";
+                        AND an.id_anio = $id_anio
+                        AND tg.id_tipo = $id_tg
+                        AND b.id_banda = $id_banda";
 
 
     include 'connection.php';
-
+//echo $SELECT_ALBUM;
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -33,7 +37,7 @@
     <head>
         <title>El Tinglao.net</title>
         <link href="./css/styles.css" rel="stylesheet" type="text/css" />
-        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15">
 
         <script>
                 function mostrarReproductor(url){                        
